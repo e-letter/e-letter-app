@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Letter App
+
+A modern Next.js application with TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, and Lucide icons.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Package Manager**: Bun
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+
+## Prerequisites
+
+- [Bun](https://bun.sh) installed on your system
 
 ## Getting Started
 
-First, run the development server:
+### Install Dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+```
+
+### Development Server
+
+Run the development server:
+
+```bash
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page auto-updates as you edit files.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
 
-## Learn More
+```bash
+bun run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Start Production Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/              # App Router pages and layouts
+├── components/       # Reusable React components
+├── lib/             # Utility functions and helpers
+│   └── utils.ts     # shadcn/ui utility functions
+└── styles/          # Global CSS files
+public/              # Static assets
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun start` - Start production server
+- `bun run lint` - Run ESLint
+
+## Adding Components
+
+To add shadcn/ui components:
+
+```bash
+bunx shadcn add <component-name>
+```
+
+Example:
+
+```bash
+bunx shadcn add button
+bunx shadcn add card
+```
+
+## Useful Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Framer Motion Documentation](https://www.framer.com/motion)
+- [Lucide Icons](https://lucide.dev)
+
+## Notes
+
+- The project uses Tailwind CSS v4 with the new `@tailwindcss/postcss` plugin
+- ESLint is pre-configured for Next.js best practices
+- TypeScript is enabled by default for type safety
