@@ -9,17 +9,16 @@ export function ModeToggle() {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
-    // eslint-disable-next-line
     setIsMounted(true);
   }, []);
 
-  // Don't render until component is mounted on client to avoid hydration mismatch
   if (!isMounted) {
     return (
       <Button size="icon" className="rounded-full transition-all duration-300 cursor-not-allowed" disabled>
         <Sun className="h-5 w-5 rotate-0 scale-100 transition-all" />
-        <span className="sr-only">Toggle theme</span>
+        <span className="sr-only">Ubah tema</span>
       </Button>
     );
   }
@@ -35,7 +34,7 @@ export function ModeToggle() {
       ) : (
         <Moon className="h-5 w-5 rotate-0 scale-100 transition-all" />
       )}
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">Ubah tema</span>
     </Button>
   );
 }

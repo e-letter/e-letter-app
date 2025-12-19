@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand, Nunito } from "next/font/google";
 import "./globals.css";
-import { Theme } from "@/components/theme-provider";
+import { Theme } from "@/components/providers/theme-provider";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -16,9 +16,12 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "E-Letter Download Hub | Complete School Permission Letter Management",
+  title: "Hub Unduh E-Letter | Manajemen Surat Izin Sekolah Lengkap",
   description:
-    "Download E-Letter for Web, Desktop, and Mobile. Complete school permission letter management system with real-time tracking across all platforms.",
+    "Unduh E-Letter untuk Web, Desktop, dan Mobile. Sistem manajemen surat izin siswa lengkap dengan pelacakan real-time di semua platform.",
+  icons: {
+    icon: "/logo-eletter.webp",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="id" suppressHydrationWarning>
       <body className={`${quicksand.variable} ${nunito.variable} antialiased`}>
         <Theme>{children}</Theme>
       </body>
