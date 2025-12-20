@@ -1,25 +1,15 @@
 # E-Letter - Platform Manajemen Surat Izin Sekolah
 # https://e-letter-app.vercel.app
 
-# Allow all bots
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# Crawl delay (Optional, ignored by Google but respected by Bing)
+Crawl-delay: 1
+
 # Sitemaps
 Sitemap: https://e-letter-app.vercel.app/sitemap.xml
 Sitemap: https://e-letter-app.vercel.app/sitemap-id.xml
-
-# Crawl delay (optional - for heavy crawlers)
-Crawl-delay: 1
-
-# Specific bot rules
-User-agent: Googlebot
-Allow: /
-Priority: 1.0
-
-User-agent: Bingbot
-Allow: /
-Priority: 0.8
