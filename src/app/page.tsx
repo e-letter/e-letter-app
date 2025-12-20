@@ -1,12 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { PlatformCard } from "@/components/sections/platform-card";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Navbar } from "@/components/layout/navbar";
 import { Globe, Monitor, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useMounted } from "@/hooks/use-mounted";
+
+const BackgroundBeams = dynamic(
+  () => import("@/components/ui/background-beams").then((mod) => ({ default: mod.BackgroundBeams })),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
 
 export default function Home() {
   const { theme } = useTheme();
@@ -34,8 +42,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
-      <BackgroundBeams className="fixed inset-0 z-0" />
+    <div className="min-h-dvh bg-background relative overflow-hidden transition-colors duration-300">
+      <BackgroundBeams className="fixed inset-0 z-0 will-change-transform" />
 
       <Navbar />
 
@@ -162,7 +170,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <h3 className="text-base md:text-lg font-quicksand font-bold mb-2">{feature.title}</h3>
+                <h2 className="text-base md:text-lg font-quicksand font-bold mb-2">{feature.title}</h2>
                 <p className={`text-xs md:text-sm ${isDark ? "text-zinc-400" : "text-slate-600"}`}>
                   {feature.description}
                 </p>

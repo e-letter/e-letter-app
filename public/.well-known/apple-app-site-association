@@ -1,0 +1,27 @@
+{
+  "short_name": "E-Letter",
+  "name": "E-Letter - Platform Manajemen Surat Izin Sekolah",
+  "icons": [
+    {
+      "src": "/logo-eletter.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo-eletter.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#020617",
+  "description": "Sistem manajemen surat izin siswa digital dengan pelacakan real-time",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "orientation": "portrait-primary"
+}
